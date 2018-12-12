@@ -1,0 +1,485 @@
+{% extends 'base.html' %}
+
+
+
+
+
+
+
+  {% block body %}
+
+  	<div class="container">
+    	<div class="thumbnail">
+       		<img src="static/project/images/bg_1.jpg" class="img-responsive">
+    	</div>
+	<div>
+
+
+
+
+<br>
+
+
+
+<form method="post" action="">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="submit">
+
+</form>
+
+
+
+      <section>
+<div class="container">
+  <h2>Recommended for you</h2>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+
+
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <div class="row mb_30">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/chicago.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Chicago</h4></a>
+                            <h5>$250<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/las_vegas.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Las_vegas</h4></a>
+                            <h5>$200<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/los_angeles.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Los_Angeles</h4></a>
+                            <h5>$750<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/tokyo.jpg" height="270px" width="270px"  alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Tokyo</h4></a>
+                            <h5>$200<small>/night</small></h5>
+                        </div>
+                    </div>
+                </div>
+      </div>
+
+      <div class="item">
+        <div class="row mb_30">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/nashvelle.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Nashvelle</h4></a>
+                            <h5>$250<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/dubai.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Dubai</h4></a>
+                            <h5>$200<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/paris.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Paris</h4></a>
+                            <h5>$750<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/singapore.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Singapore</h4></a>
+                            <h5>$200<small>/night</small></h5>
+                        </div>
+                    </div>
+                </div>
+      </div>
+
+      <div class="item">
+        <div class="row mb_30">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/malasiya.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Malasiya</h4></a>
+                            <h5>$250<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/manali.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Manali</h4></a>
+                            <h5>$200<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/sydney.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Sydney</h4></a>
+                            <h5>$750<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/boston.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Boston</h4></a>
+                            <h5>$200<small>/night</small></h5>
+                        </div>
+                    </div>
+                </div>
+      </div>
+
+      <div class="item">
+        <div class="row mb_30">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/dublin.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Dublin</h4></a>
+                            <h5>$250<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/austin.jpg" height="270px" width="270px"  alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Austin</h4></a>
+                            <h5>$200<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/denver.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Denever</h4></a>
+                            <h5>$750<small>/night</small></h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="accomodation_item text-center">
+                            <div class="hotel_img">
+                                <img src="static/project/images/bangkok.jpg" height="270px" width="270px" alt="">
+
+                            </div>
+                            <a href="#"><h4 class="sec_h4">Bangkok</h4></a>
+                            <h5>$200<small>/night</small></h5>
+                        </div>
+                    </div>
+                </div>
+      </div>
+
+
+
+
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+
+  </div>
+</section>
+
+
+
+
+<div class="container">
+  <h2>Homes for your kind of trip</h2>
+  <p style="font-size: 20px">Find a top rated home with amenities you need</p>
+  <div class="row mb_30">
+                    <div class="col-lg-3 col-sm-6" style="width: 50%">
+                          <a href="">
+                            <div class="hotel_img">
+                                <img src="static/project/images/homes.jpg" alt="" style="width: 99%" height="500px">
+
+                            </div>
+                            <p id="para">2,000+HOMES<br>
+                            Find a home that families love. Stretch out and enjoy a space of your own.
+                            </p>
+                          </a>
+
+                    </div>
+
+                    <div class="col-lg-3 col-sm-6" style="width: 50%">
+                          <a href="">
+                            <div class="hotel_img">
+                                <img src="static/project/images/business.jpg" alt="" style="width: 99%" height="500px">
+
+                            </div>
+                            <p id="para">2,000+HOMES<br>
+                            Book a top-rated home that offers reservation flexibility and work-trip essentials.
+                            </p>
+                          </a>
+
+
+                    </div>
+
+  </div>
+
+
+</div>
+
+
+
+
+
+
+<div class="container">
+  <h2>Top-rated experiences</h2>
+   <p style="font-size: 20px">Book activities led by local host on your next trip</p>
+
+              <div class="row mb_30">
+                    {% for img,add,avg_rating in mylist %}
+                    <div class="col-lg-3 col-sm-6">
+                            <div class="hotel_img">
+                              <a href="#">
+
+
+
+                                <img src="{{ MEDIA_URL }}{{ img }}" height="270px" width="270px" alt="">
+
+                            </div>
+                            <h4>{{ add }}</h4>
+
+                              {{ avg_rating }}
+                        {% with ''|center:avg_rating as range %}
+                            {% for i in range %}
+                                <span class="fa fa-star checked"></span>
+                            {% endfor %}
+                        {% endwith %}
+
+{#                              <span class="fa fa-star checked"></span>#}
+
+                    </div>
+                    {% endfor %}
+              </div>
+</div>
+    </div>
+    </div>
+
+{#              #}
+{#                    <div class="col-lg-3 col-sm-6">#}
+{#                            <div class="hotel_img">#}
+{#                              <a href="#">#}
+{#                                <img src="static/project/images/top2.jpg" height="270px" width="270px" alt="">#}
+{##}
+{#                            </div>#}
+{#                              <h6>FOOD TASTING. NEW QUAY</h6>#}
+{#                              <h4>Shuck off! Oyster Workshop and Tasting</h4>#}
+{#                              <h6>$325 per room </h6>#}
+{#                              4.92#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                            </a> 108#}
+{#                    </div>#}
+{#              <div class="col-lg-3 col-sm-6">#}
+{#                            <div class="hotel_img">#}
+{#                              <a href="#">#}
+{#                                <img src="static/project/images/top3.jpg" height="270px" width="270px" alt="">#}
+{##}
+{#                            </div>#}
+{#                              <h6>FOOD TASTING. NEW QUAY</h6>#}
+{#                              <h4>Shuck off! Oyster Workshop and Tasting</h4>#}
+{#                              <h6>$240 per room </h6>#}
+{#                              4.87#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                            </a> 91#}
+{#                    </div>#}
+{##}
+{##}
+{##}
+{#                    <div class="col-lg-3 col-sm-6">#}
+{#                            <div class="hotel_img">#}
+{#                              <a href="#">#}
+{#                                <img src="static/project/images/top4.jpg" height="270px" width="270px" alt="">#}
+{##}
+{#                            </div>#}
+{#                            <h6>FOOD TASTING. NEW QUAY</h6>#}
+{#                              <h4>Shuck off! Oyster Workshop and Tasting</h4>#}
+{#                              <h6>$175 per room </h6>#}
+{#                              4.8#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                            </a> 231#}
+{#                    </div>#}
+{#                    <div class="col-lg-3 col-sm-6">#}
+{#                            <div class="hotel_img">#}
+{#                              <a href="#">#}
+{#                                <img src="static/project/images/top5.jpg" height="270px" width="270px" alt="">#}
+{##}
+{#                            </div>#}
+{#                            <h6>FOOD TASTING. NEW QUAY</h6>#}
+{#                              <h4>Shuck off! Oyster Workshop and Tasting</h4>#}
+{#                              <h6>$300 per room </h6>#}
+{#                              4.6#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                            </a> 126#}
+{#                    </div>#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#              </div>#}
+{##}
+{#            <div class="row mb_30">#}
+{#                    <div class="col-lg-3 col-sm-6">#}
+{#                            <div class="hotel_img">#}
+{#                              <a href="#">#}
+{#                                <img src="static/project/images/top6.jpg" height="270px" width="270px" alt="">#}
+{##}
+{#                            </div>#}
+{#                              <h6>FOOD TASTING. NEW QUAY</h6>#}
+{#                              <h4>Shuck off! Oyster Workshop and Tasting</h4>#}
+{#                              <h6>$275 per room </h6>#}
+{#                              4.1#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star"></span>#}
+{#                            </a> 32#}
+{#                    </div>#}
+{##}
+{#                    <div class="col-lg-3 col-sm-6">#}
+{#                            <div class="hotel_img">#}
+{#                                <img src="static/project/images/top7.jpg" height="270px" width="270px" alt="">#}
+{#                                <a href="#">#}
+{##}
+{#                            </div>#}
+{#                            <h6>FOOD TASTING. NEW QUAY</h6>#}
+{#                              <h4>Shuck off! Oyster Workshop and Tasting</h4>#}
+{#                              <h6>$400 per room </h6>#}
+{#                              3.98#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star"></span>#}
+{#                            </a> 76#}
+{#                    </div>#}
+{##}
+{##}
+{#                  <div class="col-lg-3 col-sm-6">#}
+{#                            <div class="hotel_img">#}
+{#                              <a href="#">#}
+{#                                <img src="static/project/images/top9.jpg" height="270px" width="270px" alt="">#}
+{##}
+{#                            </div>#}
+{#                            <h6>FOOD TASTING. NEW QUAY</h6>#}
+{#                              <h4>Shuck off! Oyster Workshop and Tasting</h4>#}
+{#                              <h6>$350 per room </h6>#}
+{#                              3.8#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star"></span>#}
+{#                            </a> 128#}
+{#                    </div>#}
+{#                    <div class="col-lg-3 col-sm-6">#}
+{#                            <div class="hotel_img">#}
+{#                              <a href="#">#}
+{#                                <img src="static/project/images/top8.jpg" height="270px" width="270px" alt="">#}
+{##}
+{#                            </div>#}
+{#                            <h6>FOOD TASTING. NEW QUAY</h6>#}
+{#                              <h4></h4>#}
+{#                              <h6>$250 per room </h6>#}
+{#                              4.13#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star checked"></span>#}
+{#                              <span class="fa fa-star"></span>#}
+{#                            </a> 342#}
+{#                    </div>#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#              </div>#}
+{##}
+{##}
+{##}
+{##}
+{##}
+        {% endblock %}
+

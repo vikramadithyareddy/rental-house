@@ -1,0 +1,140 @@
+{% extends 'nav.html' %}
+{% block content %}
+{% load widget_tweaks %}
+  <div class="container">
+  <div class="row">
+    <p class="display-4" style="margin-left:5%;">Details</p>
+  </div>
+
+
+    <form class="text-center border border-light p-5" method="post">
+        {% csrf_token %}
+  <div class="row">
+    <div class="col-md-8">
+            <div class="card" style="height:auto; margin-left:5%;border-radius:20px;color:white;background-color:#0000007d;">
+              <div class="card-body" style="margin-left:113px;padding-top:140px">
+                <div class="row">
+           <div class="col-lg-4">
+            <div class="custom-control custom-checkbox ">
+              {{ upload.shareable|add_class:"custom-control-input" }}
+{#              <input type="checkbox" class="custom-control-input" id="defaultInline1">#}
+              <label style="font-size:17px"  class="custom-control-label" for="shareable">Sharable</label>
+            </div><br><br>
+      </div>
+      <div class="col-lg-4" style="padding-left: 100px;padding-right:0px;">
+            <!-- Default inline 2-->
+            <div class="custom-control custom-checkbox ">
+                {{ upload.pr_is_personal|add_class:"custom-control-input" }}
+{#              <input type="checkbox" class="custom-control-input" id="defaultInline2">#}
+              <label style="font-size:17px"  class="custom-control-label" for="id_pr_is_personal">Personal Usage</label>
+            </div><br>
+      </div>
+      </div>
+            <!-- Default inline 3-->
+            <div class="row">
+              <div class="col-lg-4">
+            <div class="custom-control custom-checkbox">
+                {{ upload.for_business|add_class:"custom-control-input" }}
+
+                {#<input type="checkbox" class="custom-control-input" id="defaultInline3" style="background-color:inherit;">#}
+              <label style="font-size:17px" class="custom-control-label" for="id_for_business">Buisness purpose</label>
+            </div><br>
+      </div>
+
+      <div class="col-lg-4" style="padding-left:100px;margin-top:-16px">
+          {{ upload.pr_type|add_class:"mdb-select md-form" }}
+{#            <select class="mdb-select md-form" style="color:white;background-color:#0000007d;border-radius:6px;width:150px;height:30px;">#}
+{#              <option value="" disabled selected>Type</option>#}
+{#              <option value="1">Hostel</option>#}
+{#              <option value="2">Apartment</option>#}
+{#              <option value="3">House</option>#}
+{#          </select>#}
+
+      <br><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+          <div style="width:240px;" class="md-form">
+                          <label for="id_street" style="color:white;">Street</label>
+
+              {{ address.street|add_class:"form-control" }}
+
+{#            <input type="text" id="form1" class="form-control" style="color:white;">#}
+          </div>
+
+        </div>
+        <div class="col-lg-4" style="padding-left: 100px">
+          <div style="width:240px;" class="md-form">
+                          <label for="id_city" style="color:white;">City</label>
+
+              {{ address.city|add_class:"form-control" }}
+
+{#            <input type="text" id="form2" class="form-control" style="color:white;">#}
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4">
+
+              <div style="width:240px;" class="md-form">
+                              <label for="id_state" style="color:white;">State</label>
+
+                  {{ address.state|add_class:"form-control" }}
+
+{#            <input type="text" id="form3" class="form-control" style="color:white;">#}
+          </div>
+        </div>
+        <div class="col-lg-4" style="padding-left: 100px;">
+          <div style="width:240px;" class="md-form">
+                      <label for="id_zipcode" style="color:white;">Pincode</label>
+
+              {{ address.zipcode|add_class:"form-control" }}
+
+{#        <input type="text" id="form4" class="form-control" style="color:white;">#}
+      </div>
+        </div>
+
+      </div>
+      <br><br>
+                    <button class="btn btn-info btn-block my-4" type="submit">submit</button>
+
+      </div>
+
+      </div>
+
+    </div>
+  </div>
+
+    </form>
+    <div class="col-md-4">
+      <div class="card" style="border-radius:20px;color:white;background-color:#0000007d;">
+        <div class="card-body">
+          <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span> <span style="font-weight: 500;">Sharable:</span><br>
+          <hr style="border-color:white;">
+          Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+           Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+           aliqueAenean eu metus <br><br><br>
+           <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> personal usage:</span><br>
+           <hr style="border-color:white;">
+           Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+            Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+            aliqueAenean eu metus <br><br><br>
+            <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> Business purpose:</span><br>
+            <hr style="border-color:white;">
+            Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+             Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+             aliqueAenean eu metus <br>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript">
+
+{% endblock %}

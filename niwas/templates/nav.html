@@ -1,0 +1,197 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <script src="static/project/script.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+{#         <meta charset="utf-8">#}
+{#        <meta name="viewport" content="width=device-width, initial-scale=1">#}
+{#     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">#}
+{#            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>#}
+{#    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>#}
+{#      <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">#}
+{#            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">#}
+{##}
+{#  <link href="{% static 'mdb/css/bootstrap.min.css' %}" rel="stylesheet">#}
+{#  <!-- Material Design Bootstrap -->#}
+{#  <link href="{% static 'mdb/css/mdb/css/mdb.min.css' %}" rel="stylesheet">#}
+{#  <!-- Your custom styles (optional) -->#}
+{#  <link href="% static 'mdb/css/style.css' %}" rel="stylesheet">#}
+  <link rel="stylesheet" type="text/css" href="{% static 'footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'abc.css' %}">
+
+
+  <body>
+
+
+
+
+     <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+
+            <!-- header -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href=" "></a>
+            </div>
+
+
+            <!-- items -->
+            <div class="collapse navbar-collapse" id="topNavBar" style="position:relative">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="{% url 'index' %}">
+                            <span  aria-hidden="true"></span>&nbsp; Home
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="">
+                            <span  aria-hidden="true"></span>&nbsp;About Us
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="{% url 'hostupload:host' %}">
+                            <span  aria-hidden="true"></span>&nbsp; Host an experience
+                        </a>
+                    </li>
+
+                <div style="position:absolute;margin-left:85%; padding-top:.1cm">
+                    <li class="active" style="">
+                         <button class="dropdown-toggle btn white-text" style="font-size:.8cm; color: #777777" type="button" data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-user"></span></button>
+                        <ul class="dropdown-menu" style="color: #dddddd">
+                           <li>
+                        <a href="{% url 'client:viewbookings' %}">
+                            <span  aria-hidden="true"></span>&nbsp; Mybookings
+                        </a>
+                    </li>
+                        {% if user.is_authenticated %}
+
+                        <li>
+                            <a href="{% url 'account:logout' %}">
+                                <span  aria-hidden="true"></span>&nbsp; Logout
+                            </a>
+                        </li>
+                        {% else %}
+                        <li>
+                            <a href="{% url 'account:register' %}">
+                                <span  aria-hidden="true"></span>&nbsp; Sign up
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'login' %}">
+                                <span aria-hidden="true"></span>&nbsp; Log in
+                            </a>
+                        </li>
+                    {% endif %}
+                        <li>
+                            <a href="{% url 'account:profile_update' %}">
+                                <span aria-hidden="true"></span>&nbsp; Edit Profile
+                            </a>
+                        </li>
+                        </ul>
+
+                    </li>
+
+                </ul>
+            </div>
+            </div>
+
+        </div>
+
+    </nav>
+    {% block content %}
+
+
+    {% endblock %}
+
+
+    <footer class="footer-distributed">
+
+                <div class="footer-left">
+
+                    <h3>Niwas<span>Dekho</span></h3>
+
+                    <p class="footer-links">
+                        <a href="">Home</a>
+                        ·
+                        <a href="#">About Us</a>
+                        ·
+                        <a href="#">Host an experience</a>
+                        ·
+                        <a href="#">Book</a>
+                        ·
+                        <a href="#">Sign up</a>
+                        ·
+                        <a href="">Log in</a>
+                    </p>
+
+                    <p class="footer-company-name">Niws Dekho &copy; iiits</p>
+                </div>
+
+                <div class="footer-center">
+
+                    <div>
+                        <i class="fa fa-map-marker"></i>
+                        <p><span>IIIT</span> Sricity, India</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-phone"></i>
+                        <p>+91 9876543210</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p><a href="mailto:sahil.k17@iiits.in">sahil.k17@iiits.in</a></p>
+                    </div>
+
+                </div>
+
+                <div class="footer-right">
+
+                    <p class="footer-company-about">
+                        <h3>About the company</h3>
+                    <p style="color: #92999f; font-size: 15px; font-weight: normal;">We aim to provide each consumer a great experience while they are a member of our family.</p>
+                    </p>
+
+                    <div class="footer-icons">
+
+                        <a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+                        <a href="https://www.github.com"><i class="fa fa-github"></i></a>
+
+                    </div>
+
+                </div>
+
+    </footer>
+
+  </body>
+</html>

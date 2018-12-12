@@ -1,0 +1,8 @@
+{% autoescape off %}
+Hi {{ user.username }},
+Booking Confirmed,
+
+Please Feedback the property -
+
+http://{{ domain }}{% url 'client_pages2:feedback' id=id %}
+{% endautoescape %}

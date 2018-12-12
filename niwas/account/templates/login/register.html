@@ -1,0 +1,51 @@
+{% extends 'nav.html' %}
+    {% load widget_tweaks %}
+    {% block content %}
+
+{#        <h2>Sign up</h2>#}
+{#          <form method="post">#}
+{#            {% csrf_token %}#}
+{#            {{ user_info.as_p }}#}
+{#            <button type="submit">Sign up</button>#}
+{#          </form>#}
+
+
+
+
+        <!-- Default form register -->
+<div class="container">
+<center>
+<div style="width: 40% ">
+
+<form class="text-center border border-light p-5" method="post">
+{% csrf_token %}
+    <p class="h4 mb-4">Sign up</p>
+
+    {% for field in user_info %}
+            {{ field.label_tag }}<br>
+        {{ field|add_class:"form-control mb-4 " }}
+     <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+         {% for error in field.errors %}
+          <p style="color: red">{{ error }}</p>
+        {% endfor %}
+    </small>
+    {% endfor %}
+
+    <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+
+
+
+    <hr>
+
+    <!-- Terms of service -->
+    <p>By clicking
+        <em>Sign up</em> you agree to our
+        <a href="" target="_blank">terms of service</a> and
+        <a href="" target="_blank">terms of service</a>. </p>
+
+</form>
+</div>
+</center>
+</div>
+<!-- Default form register -->
+{% endblock %}

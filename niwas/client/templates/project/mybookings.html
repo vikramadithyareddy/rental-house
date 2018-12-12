@@ -1,0 +1,42 @@
+{% extends 'nav.html' %}
+
+{% block content %}
+<a class="btn btn-default pull-right" href="{% url 'index' %}">Back</a>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 ">
+
+
+
+      <h4>My Bookings:</h4>
+
+      <br>
+
+
+
+      {% for booking in bookings %}
+        <a class="btn btn-sm btn-danger pull-right" href="{% url 'client:house_cancelbooking' booking.id %}">Cancel</a>
+        <p><u>Booking id:{{booking.id}}</u></p>
+
+        <p><mark>Check-in Date :</mark> {{booking.check_in}}.  </p>
+        <p><mark>Check-out Date:</mark> {{booking.check_out}}.  </p>
+        <p><mark>Total Price :</mark> ₹{{booking.price_paid}}.  </p>
+
+         <br>
+      {%endfor%}
+      {% for booking in hostel_bookings %}
+          <a class="btn btn-sm btn-danger pull-right" href="{% url 'client:hostel_cancelbooking' booking.id %}">Cancel</a>
+        <p><u>Booking id:{{booking.id}}</u></p>
+
+        <p><mark>Check-in Date :</mark> {{booking.check_in}}.  </p>
+        <p><mark>Check-out Date:</mark> {{booking.check_out}}.  </p>
+        <p><mark>Total Price :</mark> ₹{{booking.price_paid}}.  </p>
+
+         <br>
+
+      {% endfor %}
+
+    </div>
+  </div>
+
+{% endblock %}
+

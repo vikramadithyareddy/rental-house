@@ -1,0 +1,208 @@
+{#{% extends 'nav.html' %}#}
+{#{% load crispy_forms_tags %}#}
+{#{% block content %}#}
+{#    <form enctype="multipart/form-data" method="post">#}
+{#      {% csrf_token %}#}
+{#      {{ house.as_p }}#}
+{#      {{ price.as_p }}#}
+{#      <input type="submit" name="submit" value="register">#}
+{#    </form>#}
+{#{% endblock %}#}
+{##}
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+ {% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>House Upload page</title>
+    <link rel="shortcut icon" href="title_head.png" type="png">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+    <style media="screen">
+    body {
+    background-color: whitesmoke;
+    background-repeat:no-repeat;
+    background-size: cover;
+    }
+    .input_heads{
+
+        color:black;
+        width:75%;
+
+    }
+    .extra_items{
+        color:black;
+    }
+
+    .classbutton{
+       border-radius:10px;width:20%;
+        height:40%;background-color:#3c26267a;color:white;
+    }
+
+    option:hover{
+      white;
+    }
+
+  </style>
+
+
+</head>
+
+<body>
+ <form enctype="multipart/form-data" method="post">
+    <div class="container-fluid">
+      <div class="col-md-12">
+
+          <div class="row">
+              <div class="col-md-8">
+                        &nbsp<div class="row">
+                            &nbsp&nbsp<div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width:98%;border-radius:0px;height:auto;color:white;background-color:white;">
+                                <div class="card-body" style="">
+                                    <div style="Text-align:center">
+                                        <span Style="color:black;font-size:30px ">House Property Details</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <br>
+                  <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width:100%;border-radius:0px;height:auto;color:white;background-color:white;">
+                     <div class="card-body" style="">
+                        <div style="padding-left:23%">
+                          {% csrf_token %}
+
+                          <div class="input_heads">
+                           <h2>Quantity</h2>
+                          {% crispy house %}
+                          <br>
+                          <h2>Price</h2>
+                         {% crispy price %}
+                         </div>
+                         <br>
+                          <div style="padding-left:20%">
+
+
+                                    <input type="submit" name="submit" class="classbutton" value="register">
+
+                          </div>
+                        </div>
+                     </div>
+                  </div>
+              </div>
+
+                  <div class="col-md-4">
+                          &nbsp<div class="row">
+                                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width:100%;border-radius:0px;height:auto;color:white;background-color:white;">
+                                  <div class="card-body" style="">
+                                      <div style="Text-align:center">
+                                          <span Style="color:black;font-size:30px;font-weight:100px">Description</span>
+                                      </div>
+                                  </div>
+                                </div>
+                          </div><br>
+                          <div class="row">
+                                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width:100%;border-radius:0px;height:auto;color:white;background-color:white;">
+                                  <div class="card-body" style="">
+                                          <div style="color:black">
+                                               <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span> <span style="font-weight: 500;">Attached:
+                                                </span><br>
+                                                  <hr style="border-color:black;">
+                                                  Attached is if you want to provide the particular property with the bathrooms attached to them inside of the each particualar room or the inside
+                                                  two rooms if double and three bathrooms each per room if you are providing triple bedroom  <br><br><br>
+                                                   <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> personal usage:</span><br>
+                                                   <hr style="border-color: black">
+                                                   Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                                    Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                                    aliqueAenean eu metus <br><br><br>
+                                                    <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> Business purpose:</span><br>
+                                                    <hr style="border-color:black;">
+                                                    Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                                     Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                                     aliqueAenean eu metus <br>
+                                          </div>
+                                  </div>
+                                </div>
+                          </div>
+                          <br><br>
+                          <div class="row">
+                                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width:100%;border-radius:0px;height:auto;color:white;background-color:white;">
+                                  <div class="card-body" style="">
+                                        <div style="color:black">
+                                           <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span> <span style="font-weight: 500;">Attached:
+                                            </span><br>
+                                              <hr style="border-color:black;">
+                                              Attached is if you want to provide the particular property with the bathrooms attached to them inside of the each particualar room or the inside
+                                              two rooms if double and three bathrooms each per room if you are providing triple bedroom
+                                              <br><br><br>
+                                               <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> personal usage:</span><br>
+                                               <hr style="border-color:black;">
+                                               Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                                Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                                aliqueAenean eu metus <br><br><br>
+                                                <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> Business purpose:</span><br>
+                                                <hr style="border-color:black;">
+                                                Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                                 Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                                 aliqueAenean eu metus <br>
+                                        </div>
+                                  </div>
+                                </div>
+                          </div>
+                          <br><br>
+                           <div class="row">
+                                <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);width:100%;border-radius:0px;height:auto;color:white;background-color:white;">
+                                  <div class="card-body" style="">
+                                        <div style="color:black">
+                                           <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span> <span style="font-weight: 500;">Attached:
+                                            </span><br>
+                                              <hr style="border-color:black;">
+                                              Attached is if you want to provide the particular property with the bathrooms attached to them inside of the each particualar room or the inside
+                                              two rooms if double and three bathrooms each per room if you are providing triple bedroom
+                                              <br><br><br>
+                                               <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> personal usage:</span><br>
+                                               <hr style="border-color:black;">
+                                               Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                                Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                                aliqueAenean eu metus <br><br><br>
+                                                <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> Business purpose:</span><br>
+                                                <hr style="border-color:black;">
+                                                Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                                 Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                                 aliqueAenean eu metus <br>
+                                        </div>
+                                  </div>
+                                </div>
+                          </div>
+
+                  </div>
+         </div>
+      </div>
+    </div>
+    </form>
+</body>
+</html>

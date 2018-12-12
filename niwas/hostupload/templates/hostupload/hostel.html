@@ -1,0 +1,12 @@
+{% extends 'nav.html' %}
+{% block content %}
+    <form enctype="multipart/form-data" method="post">
+      {% csrf_token %}
+
+      {{ hostel.as_p }}
+        <p>Pricing</p>
+      {{ price.as_p }}
+        {{ image.as_p }}
+      <input type="submit" name="submit" value="register">
+    </form>
+{% endblock %}

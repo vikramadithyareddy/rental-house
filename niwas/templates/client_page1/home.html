@@ -1,0 +1,63 @@
+{% extends 'nav.html' %}
+{% load staticfiles %}
+
+  {% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'client_page1/style.css' %}">
+<div class="transparent" class="container-fluid">
+  <div class="place">
+    <div class="center">
+			<div class="row">
+				<div class="col">
+          <div style="color:black;">
+					<form action="{% url 'client_page1:client_page1-home' %}" method="POST" name = "trial">
+            {%  csrf_token %}
+            <input type="date" name="checkin" value="{{checkin}}">
+            <input type="date" name="checkout" value="{{checkout}}">
+						<select  name="housetype" id='name'>
+							<option disabled selected value="house type">house type</option>
+							<option value="houses">houses</option>
+							<option value="hostel">hostel</option>
+						</select>
+            <select  name="pricerange">
+							<option disabled selected value="price range">price range</option>
+							<option value="low">low</option>
+							<option value="medium">medium</option>
+              <option value="high">high</option>
+						</select>
+					  <button type="submit">search</button>
+					</form>
+        </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4">
+      <iframe id ="myIframe" src="{% url 'client_page1:client_page1-maps' %}" width="100%" height="650px"></iframe>
+    </div>
+    <div class="col-sm-8">
+      {% if selected %}
+        {% for each,img,avg_rating in selected %}
+        <a href="{% url 'client_pages2:home' id=each.id %}">
+            <div class="card" style="float:left">
+              <img class="card-img-top" src="{{img.url}}" style="width:100%;height:190px;">
+              <div class="card-text">
+                {{avg_rating}}
+                  <p>{% with ''|center:avg_rating as range %}
+                      {% for i in range %}
+                          <span class="fa fa-star checked"></span>
+                      {% endfor %}
+                  {% endwith %}
+
+</p>
+              </div>
+            </div>
+          </a>
+      {% endfor %}
+      {% endif %}
+
+  </div>
+</div>
+  {% endblock %}

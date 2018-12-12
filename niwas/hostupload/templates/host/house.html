@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+ {% load widget_tweaks %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>upload main page</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+  <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+
+      <style media="screen">
+    body {
+    background-image: url("img.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+    }
+    .inputheads{
+        color:white;
+        width:35%;
+    }
+    .extraitems{
+        color:white;
+    }
+
+    .classbutton{
+       border-radius:5px;width:80%;height:20%;background-color:teal;color:white;
+    }
+
+    option:hover{
+      white;
+    }
+
+  </style>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="col-md-12">
+            <div class="row">
+                 <div class="col-md-8">
+                               <div class="row">
+                                  <div style="margin: auto;display: block">
+                                    <p class="display-4" style="">Details Form</p>
+                                 </div>
+                               </div>
+
+         <form enctype="multipart/form-data" method="post" action="">
+             {% csrf_token %}
+                            <div class="card" style="width:92%;height:auto;border-radius:20px;color:white;background-color:#0000007d;">
+                              <div class="card-body" style="">
+                                     <div class="row">
+                                        <div style="margin: auto;display: block">
+                                           <p class="display-4" style="">Attached</p>
+
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                        <div style="margin: auto;display: block">
+                                           <h5 class="display-5" style="font-size:30px;">Single</h5>
+
+                                         </div>
+                                     </div>
+                                     <div class="row">
+
+                                                 <div class="col-md-6">
+
+                                                         <div class="md-form">
+                                                                    {{house.single_a|add_class:"form-control inputheads"}}
+{#                                                                  <input type="text" id="form1" class="form-control inputheads">#}
+                                                                  <label for="id_single_a" style="color:white;">Qty</label>
+
+                                                         </div>
+                                                  </div>
+
+
+                                                 <div class="col-md-6">
+                                                     <div class="md-form">
+                                                           {{price.single_a|add_class:"form-control inputheads"}}
+{#                                                          <input type="text" id="form2" class="form-control inputheads ">#}
+                                                          <label for="id_single_a" style="color:white;">Price</label>
+                                                     </div>
+                                                 </div>
+
+                                      </div>
+                                      <br>
+                                      <div class="row">
+                                        <div style="margin: auto;display: block">
+                                           <h5 class="display-5" style="font-size:30px">Double</h5>
+
+                                         </div>
+                                     </div>
+                                     <div class="row">
+
+
+                                             <div class="col-md-6">
+
+                                                     <div class="md-form">
+                                                             {{house.double_a|add_class:"form-control inputheads"}}
+{#                                                          <input type="text" id="form3" class="form-control inputheads">#}
+                                                          <label for="id_double_a" style="color:white;">Qty</label>
+                                                     </div>
+
+                                             </div>
+                                             <div class="col-md-6">
+                                                 <div class="md-form">
+                                                           {{price.double_a|add_class:"form-control inputheads"  }}
+
+{#                                                      <input type="text" id="form4" class="form-control inputheads">#}
+                                                      <label for="id_double_a" style="color:white;">Price</label>
+                                                 </div>
+                                             </div>
+
+                                      </div>
+                                      <br>
+                                      <div class="row">
+                                        <div style="margin: auto;display: block">
+                                           <h5 class="display-5" style="font-size:30px">Triple</h5>
+
+                                         </div>
+                                     </div>
+
+
+                                      <div class="row">
+
+                                             <div class="col-md-6">
+
+                                                     <div class="md-form">
+                                                            {{house.triple_a|add_class:"form-control inputheads"}}
+{#                                                          <input type="text" id="form5" class="form-control inputheads">#}
+                                                          <label for="id_triple_a" style="color:white;">Qty</label>
+                                                     </div>
+
+                                             </div>
+                                             <div class="col-md-6">
+                                                 <div class="md-form">
+                                                           {{price.triple_a|add_class:"form-control inputheads"}}
+
+{#                                                      <input type="text" id="form6" class="form-control inputheads">#}
+                                                      <label for="id_triple_a" style="color:white;">Price</label>
+                                                 </div>
+                                             </div>
+                                      </div>
+
+                                      <br>
+
+
+                                     </div>
+
+
+                                      <br><br><br>
+
+                                      <div class="row">
+                                        <div style="margin: auto;display: block">
+                                           <p class="display-4" style="">Non-Attached</p>
+
+                                         </div>
+                                     </div>
+                                     <div class="row">
+                                        <div style="margin: auto;display: block">
+                                           <div class="display-5" style="font-size:30px">Single</div>
+
+                                         </div>
+                                     </div>
+                                     <div class="row">
+
+                                             <div class="col-md-6">
+
+                                                     <div class="md-form">
+                                                                {{house.single_wa|add_class:"form-control inputheads"}}
+{#                                                              <input type="text" id="form9" class="form-control inputheads">#}
+                                                              <label for="id_single_wa" style="color:white;">Qty</label>
+
+                                                     </div>
+
+                                             </div>
+                                             <div class="col-md-6">
+                                                 <div class="md-form">
+                                                           {{price.single_wa|add_class:"form-control inputheads"}}
+
+{#                                                      <input type="text" id="form10" class="form-control inputheads">#}
+                                                      <label for="id_single_wa" style="color:white;">Price</label>
+                                                 </div>
+                                             </div>
+                                      </div>
+                                      <br>
+                                      <div class="row">
+                                        <div style="margin: auto;display: block">
+                                           <div class="display-5" style="font-size:30px">Double</div>
+
+                                         </div>
+                                     </div>
+                                     <div class="row">
+
+                                             <div class="col-md-6">
+                                                 <div style="margin: auto;display: block">
+                                                     <div class="md-form">
+                                                            {{house.double_wa|add_class:"form-control inputheads"}}
+{#                                                          <input type="text" id="form11" class="form-control inputheads">#}
+                                                          <label for="id_double_wa" style="color:white;">Qty</label>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                 <div class="md-form">
+                                                           {{price.double_wa|add_class:"form-control inputheads"}}
+
+{##                                                     <input type="text" id="form12" class="form-control inputheads">#}
+                                                      <label for="id_double_wa" style="color:white;">Price</label>
+                                                 </div>
+                                             </div>
+                                      </div>
+                                      <br>
+                                      <div class="row">
+                                        <div style="margin: auto;display: block">
+                                           <div class="display-5" style="font-size:30px">Triple</div>
+
+                                         </div>
+                                     </div>
+
+
+                                      <div class="row">
+
+                                             <div class="col-md-6">
+                                                 <div style="margin: auto;display: block">
+                                                     <div class="md-form">
+                                                            {{house.triple_wa|add_class:"form-control inputheads"}}
+{#                                                          <input type="text" id="form13" class="form-control inputheads">#}
+                                                          <label for="id_triple_wa" style="color:white;">Qty</label>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                 <div class="md-form">
+                                                           {{price.triple_wa|add_class:"form-control inputheads"  }}
+
+{#                                                      <input type="text" id="form14" class="form-control inputheads">#}
+                                                      <label for="id_triple_wa" style="color:white;">Price</label>
+                                                 </div>
+                                             </div>
+                                      </div>
+
+                                      <br><br><br>
+                                      <div class="row">
+                                        <div style="margin: auto;display: block">
+                                           <div class="display-4" >Beds</div>
+
+                                         </div>
+                                     </div>
+
+
+                                      <div class="row">
+
+                                             <div class="col-md-6">
+                                                 <div style="margin: auto;display: block">
+                                                     <div class="md-form">
+                                                           {{house.floorbed|add_class:"form-control inputheads"  }}
+
+{#                                                          <input type="text" id="form15" class="form-control inputheads">#}
+                                                          <label for="id_floorbed" style="color:white;">Qty</label>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             <div class="col-md-6">
+                                                 <div class="md-form">
+                                                           {{price.floorbed|add_class:"form-control inputheads"}}
+
+{#                                                      <input type="text" id="form16" class="form-control inputheads">#}
+                                                      <label for="id_floorbed" style="color:white;">Price</label>
+                                                 </div>
+                                             </div>
+                                      </div>
+                                      <br><br>
+                                      <div class="row">
+                                        <div style="margin: auto;display: block">
+                                           <p class="display-4" style="">Amenities</p>
+
+                                         </div>
+                                     </div>
+                                      <br>
+
+                                     <div class="row">
+                                         {{ house.amenities }}
+{##}
+{#                                         <div class="col-md-6">#}
+{#                                             <div class="custom-control custom-checkbox ">#}
+{##}
+{#                                                <input type="checkbox" name="amenities" class="custom-control-input" id="id_amenities_0">#}
+{#                                                <label value="ac" style="font-size:20px"  class="custom-control-label" for="id_amenities_0">Air Conditioner</label>#}
+{#                                             </div>#}
+{#                                         </div>#}
+{#                                         <div class="col-md-6">#}
+{#                                             <div class="custom-control custom-checkbox ">#}
+{#                                               <input type="checkbox" name="amenities" class="custom-control-input" id="id_amenities_1">#}
+{#                                                <label value="ac" style="font-size:20px"  class="custom-control-label" for="id_amenities_1">Cooler</label>#}
+{#                                             </div>#}
+{#                                         </div>#}
+{#                                     </div>#}
+{#                                    <br>#}
+{#                                     <div class="row">#}
+{#                                         <div class="col-md-6">#}
+{#                                             <div class="custom-control custom-checkbox ">#}
+{#                                                <input type="checkbox" class="custom-control-input" id="defaultInline3">#}
+{#                                                <label value="ac" style="font-size:20px"  class="custom-control-label" for="defaultInline3">refrigerator</label>#}
+{#                                             </div>#}
+{#                                         </div>#}
+{#                                         <div class="col-md-6">#}
+{#                                             <div class="custom-control custom-checkbox ">#}
+{#                                                <input type="checkbox" class="custom-control-input" id="defaultInline4">#}
+{#                                                <label value="ac" style="font-size:20px"  class="custom-control-label" for="defaultInline4">Torch</label>#}
+{#                                             </div>#}
+{#                                         </div>#}
+{#                                     </div>#}
+{#                                      <br>#}
+{#                                      <div class="row">#}
+{#                                         <div class="col-md-6">#}
+{#                                             <div class="custom-control custom-checkbox ">#}
+{#                                                <input type="checkbox" class="custom-control-input" id="defaultInline5">#}
+{#                                                <label value="ac" style="font-size:20px"  class="custom-control-label" for="defaultInline5">refrigerator</label>#}
+{#                                             </div>#}
+{#                                         </div>#}
+{#                                         <div class="col-md-6">#}
+{#                                             <div class="custom-control custom-checkbox ">#}
+{#                                                <input type="checkbox" class="custom-control-input" id="defaultInline6">#}
+{#                                                <label value="ac" style="font-size:20px"  class="custom-control-label" for="defaultInline6">Torch</label>#}
+{#                                             </div>#}
+{#                                         </div>#}
+{#                                     </div>#}
+{#                                     <br>#}
+{#                                      <div class="row">#}
+{#                                         <div class="col-md-6">#}
+{#                                             <div class="custom-control custom-checkbox ">#}
+{#                                                <input type="checkbox" class="custom-control-input" id="defaultInline7">#}
+{#                                                <label value="ac" style="font-size:20px"  class="custom-control-label" for="defaultInline7">refrigerator</label>#}
+{#                                             </div>#}
+{#                                         </div>#}
+{#                                         <div class="col-md-6">#}
+{#                                             <div class="custom-control custom-checkbox ">#}
+{#                                                <input type="checkbox" class="custom-control-input" id="defaultInline8">#}
+{#                                                <label value="ac" style="font-size:20px"  class="custom-control-label" for="defaultInline8">Torch</label>#}
+{#                                             </div>#}
+{#                                         </div>#}
+{#                                     </div>#}
+{#                                     <br>#}
+{#                                      <div class="row">#}
+{#                                         <div class="col-md-6">#}
+{#                                             <div class="custom-control custom-checkbox ">#}
+{#                                                <input type="checkbox" class="custom-control-input" id="defaultInline9">#}
+{#                                                <label value="ac" style="font-size:20px"  class="custom-control-label" for="defaultInline9">refrigerator</label>#}
+{#                                             </div>#}
+{#                                         </div>#}
+{#                                         <div class="col-md-6">#}
+{#                                             <div class="custom-control custom-checkbox ">#}
+{#                                                <input type="checkbox" class="custom-control-input" id="defaultInline10">#}
+{#                                                <label value="ac" style="font-size:20px;"  class="custom-control-label" for="defaultInline10">Torch</label>#}
+{#                                             </div>#}
+{#                                         </div>#}
+{#                                     </div>#}
+                                      <br><br>
+                                      <div class="row">
+                                           <div class="col-md-6">
+                                              <div style="width:240px;" class="md-form">
+                                                           {{price.security|add_class:"form-control extraitems"  }}
+
+{#                                                <input type="text" id="form18" class="form-control extraitems">#}
+0                                                <label for="id_security" style="color:white;">cost of security</label>#}
+                                              </div>
+
+                                          </div>
+                                          <div class="col-md-6">
+                                              <div style="width:240px;" class="md-form">
+                                                          {{price.cleaning|add_class:"form-control extraitems"  }}
+
+ {#                                                <input type="text" id="form19" class="form-control extraitems ">#}
+                                                <label for="id_cleaning" style="color:white;">Cost of maintainence</label>
+                                              </div>
+
+                                          </div>
+                                      </div>
+                                      <br>
+
+                                      <div class="row">
+
+                                              <div class="col-md-6">
+                                                  <div class="md-form" style="padding-right:10%">
+                                                           {{price.extra|add_class:"md-textarea form-control"}}
+
+{#                                                      <textarea type="text" style="color:white" id="form7" class="md-textarea form-control" rows="3"></textarea>#}
+                                                      <label for="id_extra" style="color:white;font-size:18px">Extra Charges</label>
+                                                  </div>
+                                               </div>
+
+
+                                              <div class="col-md-6">
+                                                   <div class="md-form" style="padding-right:10%">
+                                                           {{ house.description|add_class:"md-textarea form-control" }}
+
+{#                                                       <textarea type="text" style="color:white" id="form7" class="md-textarea form-control" rows="3"></textarea>#}
+                                                       <label for="id_description" style="color:white;font-size:18px">Description</label>
+                                                   </div>
+                                              </div>
+
+
+                                      </div>
+{#                                      <br><br>#}
+{#                                      <div class="row">#}
+{#                                        <div style="margin: auto;display: block">#}
+{#                                           <p class="display-4" style="">Upload property photos</p>#}
+{##}
+{#                                         </div>#}
+{#                                     </div>#}
+{#                                      <div class="row">#}
+{##}
+{##}
+{#                                              <div class="col-md-6">#}
+{##}
+{##}
+{#                                                  <div class="input-default-wrapper mt-3">#}
+{##}
+{##}
+{#                                                      <input type="file" id="file-with-current" class="input-default-js">#}
+{##}
+{#                                                      <label class="label-for-default-js rounded-right mb-3" for="file-with-current">#}
+{##}
+{##}
+{#                                                      </label>#}
+{##}
+{#                                                  </div>#}
+{#                                              </div>#}
+{##}
+{#                                              <div class="col-md-6">#}
+{##}
+{##}
+{#                                                  <div class="input-default-wrapper mt-3">#}
+{##}
+{##}
+{#                                                      <input type="file" id="file-with-current" class="input-default-js">#}
+{##}
+{#                                                      <label class="label-for-default-js rounded-right mb-3" for="file-with-current">#}
+{##}
+{##}
+{#                                                      </label>#}
+{##}
+{#                                                  </div>#}
+{#                                              </div>#}
+{##}
+{##}
+{##}
+{#                                      </div>#}
+{#                                       <br>#}
+{#                                       <div class="row">#}
+{##}
+{##}
+{#                                              <div class="col-md-6">#}
+{##}
+{##}
+{#                                                  <div class="input-default-wrapper mt-3">#}
+{##}
+{##}
+{#                                                      <input type="file" id="file-with-current" style="background-color:inherit;" class="input-default-js">#}
+{##}
+{#                                                      <label class="label-for-default-js rounded-right mb-3" for="file-with-current">#}
+{##}
+{##}
+{#                                                      </label>#}
+{##}
+{#                                                  </div>#}
+{#                                              </div>#}
+{##}
+{#                                              <div class="col-md-6">#}
+{##}
+{##}
+{#                                                  <div class="input-default-wrapper mt-3">#}
+{##}
+{##}
+{#                                                      <input type="file" id="file-with-current" class="input-default-js">#}
+{##}
+{#                                                      <label class="label-for-default-js rounded-right mb-3" for="file-with-current">#}
+{##}
+{##}
+{#                                                      </label>#}
+{##}
+{#                                                  </div>#}
+{#                                              </div>#}
+{##}
+{##}
+{##}
+{#                                      </div>#}
+{#
+
+                                      <br><br>
+                                      <div class="row">
+                                          <div style="margin:auto;display:block">
+                                              <div class="text-center">
+#                                                <input type="submit" name="submit" value="jsdjbscdbs" class="classbutton" >
+                                              </div>
+                                          </div>
+                                      </div>
+                                  <br>
+
+                              </div>
+                            </div>
+            </form>
+
+                <div class="col-md-4">
+                    <div class="row">
+                        <div style="margin: auto;display: block">
+                            <p class="display-4" style="">About</p>
+                        </div>
+                    </div>
+
+
+                      <div class="row">
+                          <div class="card" style="width:80%;height:200%;border-radius:20px;color:white;background-color:#0000007d;">
+                            <div class="card-body">
+                              <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span> <span style="font-weight: 500;">Attached:</span><br>
+                              <hr style="border-color:white;">
+                              Attached is if you want to provide the particular property with the bathrooms attached to them inside of the each particualar room or the inside
+                              two rooms if double and three bathrooms each per room if you are providing triple bedroom  <br><br><br>
+                               <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> personal usage:</span><br>
+                               <hr style="border-color:white;">
+                               Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                aliqueAenean eu metus <br><br><br>
+                                <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> Business purpose:</span><br>
+                                <hr style="border-color:white;">
+                                Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                 Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                 aliqueAenean eu metus <br>
+                            </div>
+                          </div>
+                      </div>
+                          <br><br><br><br><br><br>
+                     <div class="row">
+                          <div class="card" style="width:80%;border-radius:20px;color:white;background-color:#0000007d;">
+                            <div class="card-body">
+                              <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span> <span style="font-weight: 500;">Sharable:</span><br>
+                              <hr style="border-color:white;">
+                              Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                               Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                               aliqueAenean eu metus <br><br><br>
+                               <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> personal usage:</span><br>
+                               <hr style="border-color:white;">
+                               Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                aliqueAenean eu metus <br><br><br>
+                                <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> Business purpose:</span><br>
+                                <hr style="border-color:white;">
+                                Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                 Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                 aliqueAenean eu metus <br>
+                            </div>
+                          </div>
+                     </div>
+                       <br><br><br><br><br><br>
+                      <div class="row">
+                          <div class="card" style="width:80%;height:30%;border-radius:20px;color:white;background-color:#0000007d;">
+                            <div class="card-body">
+                              <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span> <span style="font-weight: 500;">Attached:</span><br>
+                              <hr style="border-color:white;">
+                              Attached is if you want to provide the particular property with the bathrooms attached to them inside of the each particualar room or the inside
+                              two rooms if double and three bathrooms each per room if you are providing triple bedroom  <br><br><br>
+                               <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> personal usage:</span><br>
+                               <hr style="border-color:white;">
+                               Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                aliqueAenean eu metus <br><br><br>
+                                <span class="far fa-lightbulb" style="color:#00c5c5;font-size:larger;"></span><span style="font-weight: 500;"> Business purpose:</span><br>
+                                <hr style="border-color:white;">
+                                Lorem estibulum dolor quis eleifend. Cras non ex ipsum.
+                                 Ut pharetra scelerisque justo et tincidunt. Vivamus nisi enim, faucibus eu mattis id,
+                                 aliqueAenean eu metus <br>
+                            </div>
+                          </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="js/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
+  <script type="text/javascript"></script>
+
+
+</body>
+</html>

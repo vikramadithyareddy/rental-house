@@ -1,0 +1,512 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGBa0ZLrpyDs9IZ1Y4gk0_hppyt6k1Kr4&callback=myMap"></script>
+
+</head>
+
+  <title>Apartment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+ <link rel="stylesheet" href="{% static 'styles\style.css' %}">
+<link rel="stylesheet" href="{% static "styles\scripts.js" %}">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style>
+ /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 35%;
+	  width:25%
+
+    }
+
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height:auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+.book{
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height:5%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+  .footer {
+    position: fixed;
+
+    bottom: 0;
+    width: 100%;
+}
+  .word{
+  word-spacing:40px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+}
+.thumbnail{
+ max-width:350px;
+ max-height:350px;
+}
+.thumbnail img {
+    width: 350px;
+    height: 350px;
+    margin-bottom: 10px;
+}
+  .container {
+      padding: 80px 120px;
+  }
+  .person {
+      border: 10px solid transparent;
+      margin-bottom: 25px;
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+  }
+  .person:hover {
+      border-color: #f1f1f1;
+  }
+  #myCarousel{
+      max-height:500px;
+  }
+  .carousel inner{
+      max-height:500px;
+
+  }
+  .carousel-inner img {
+       /* make all photos black and white */
+       /* Set width to 100% */
+      margin: auto;
+      max-height:500px;
+
+      width:100%;
+  }
+  .carousel-caption h3 {
+      color: #fff !important;
+  }
+  @media (max-width: 600px) {
+    .carousel-caption {
+      display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
+    }
+  }
+/* Add an orange color to all icons and set the font-size */
+.logo-small {
+    color: #f4511e;
+    font-size: 50px;
+}
+
+.logo {
+    color: #f4511e;
+    font-size: 200px;
+}
+.navbar {
+      margin-bottom: 0;
+      background-color: #f4511e;
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 0.5 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #f4511e !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+
+  <!--.slideanim {visibility:visible;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }--></style>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <!--<a class="navbar-brand" href="#myPage">logo</a>-->
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+
+        <li><a href="#services">AMENITIES</a></li>
+        <li><a href="#portfolio">TOUR THE APARTMENT</a></li>
+
+        <li><a href="#contact">CONTACT</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+        <br><br><br>
+        <br>
+
+
+  <form method="post" action="{% url 'client:bookRoom' pr_id %}" >
+    {% csrf_token %}
+    <table border="1">
+    {{ form.as_p}}
+    <input type="submit" value="BOOK">
+    </table>
+</form>
+</div>
+
+<div style="margin-left:25%">
+
+<div id="myCarousel" class="carousel slide container-fluid" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+   <div class="carousel-inner" role="listbox">
+    {% for p in h %}
+    {% if forloop.counter == 1 %}
+    <div class="item active">
+    {% else %}
+    <div class="item">
+    {% endif %}
+        <img src="{{ p.url }}" alt="Image" >
+
+        <div class="carousel-caption">
+          <h3>Bedroom</h3>
+
+        </div>
+      </div>
+   {% endfor %}
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+
+
+</div>
+  <div>
+
+
+      {% for i in s %}
+     Cost per night
+
+          {{i}}
+      {%endfor%}
+  </div>
+
+
+
+
+<div id="services" class="container-fluid text-center ">
+  <h2>AMENITIES</h2>
+  <h4>What we offer</h4>
+  <br>
+ {%  for i in list%}
+  <div class="row ">
+    <div class="col-sm-4">
+      <span class=""></span>
+	  <img src="{{ i.pictures.url}}">
+      <h4>{{ i}}</h4>
+
+    </div>
+  {% endfor %}
+    </div>
+<!--    <div class="col-sm-4">
+      <span class=""></span>
+
+      <h4>TV</h4>
+
+    </div>
+    <div class="col-sm-4">
+      <span class=""></span>
+
+      <h4>Iron</h4>
+
+    </div>
+    </div>
+    <br><br>
+  <div class="row">
+    <div class="col-sm-4">
+      <span class=""></span>
+
+      <h4>Coffee maker</h4>
+
+    </div>
+    <div class="col-sm-4">
+      <span class=""></span>
+
+      <h4>Hair-dryer</h4>
+
+    </div>
+    <div class="col-sm-4">
+      <span class=""></span>
+
+      <h4>Essentials</h4>
+    </div>
+  </div>
+</div>
+-->
+
+<div class="container">
+
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">show all amenities</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Amenities</h4>
+        </div>
+        <div class="modal-body">
+            {% for i in list %}
+
+          <p>{{ i }}</p>
+            {% endfor %}
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div id="contact" class="container-fluid text-center bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+        <p><h1>Contact us and we'll get back to you within 24 hours.</h1></p>
+        {% for i in hostdetails %}
+
+
+
+      <p><span class="glyphicon glyphicon-map-marker"></span> {{ i }}</p>
+      <!--<p><span class="glyphicon glyphicon-phone"></span> number</p>-->
+
+        {% endfor %}
+
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="portfolio" class="container-fluid text-center bg-grey ">
+  <h2>Tour the Apartment</h2>
+
+  <div class="row text-center">
+      {% for p in h %}
+    <div class="col-sm-4">
+
+      <div class="thumbnail">
+
+        <img src="{{ p.url }}" alt="Image" >
+
+        <p><strong>livingroom</strong></p>
+
+      </div>
+
+
+
+
+    </div>
+      {% endfor %}
+</div>
+
+<div>
+<h1>Location</h1>
+    <p></p>
+</div>
+
+<div id="map"class="container-fluid" style="width:100%;height:400px;"></div>
+<!--
+<footer class="footer-fixed container">
+<div class="book">
+  <span>Price</span>
+
+
+<a href="#" class="btn btn-info" role="button" style="float:right">Request to Book</a>
+</div>
+
+</footer>
+-->
+
+<script type="text/javascript">
+
+  var delay = 100;
+  var infowindow = new google.maps.InfoWindow();
+  var latlng = new google.maps.LatLng(17.3850, 78.4867);
+  var mapOptions = {
+    zoom: 15,
+    center: latlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  }
+  var geocoder = new google.maps.Geocoder();
+  var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+  var bounds = new google.maps.LatLngBounds();
+
+  function geocodeAddress(address, next) {
+    geocoder.geocode({address:address}, function (results,status)
+      {
+         if (status == google.maps.GeocoderStatus.OK) {
+          var p = results[0].geometry.location;
+          var lat=p.lat();
+          var lng=p.lng();
+          createMarker(address,lat,lng);
+        }
+        else {
+           if (status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT) {
+            nextAddress--;
+            delay++;
+          } else {
+                        }
+        }
+        next();
+      }
+    );
+  }
+ function createMarker(add,lat,lng) {
+   var contentString = add;
+   var marker = new google.maps.Marker({
+     position: new google.maps.LatLng(lat,lng),
+     map: map,
+           });
+
+  google.maps.event.addListener(marker, 'click', function() {
+     infowindow.setContent(contentString);
+     infowindow.open(map,marker);
+   });
+
+   bounds.extend(marker.position);
+
+ }
+  var locations =["{{ address }}"]
+
+
+  var nextAddress = 0;
+  function theNext() {
+    if (nextAddress < locations.length) {
+      setTimeout('geocodeAddress("'+locations[nextAddress] +'",theNext)', delay);
+      nextAddress++;
+    } else {
+      map.fitBounds(bounds);
+    }
+  }
+
+      theNext();
+
+</script>
+
+</div>
+</body>
+</html>
